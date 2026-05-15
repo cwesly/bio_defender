@@ -15,16 +15,13 @@ public class MovimentoAnticorpo : MonoBehaviour
         }
     }
 
-    // Essa função é ativada automaticamente quando o tiro encosta em outro colisor
     void OnTriggerEnter2D(Collider2D outro)
     {
-        // Verifica se o objeto em que bateu tem a etiqueta "Inimigo"
         if (outro.CompareTag("Inimigo"))
         {
-            // Destrói o objeto em que bateu (o Vírus)
-            Destroy(outro.gameObject);
+            Object.FindFirstObjectByType<GerenciadorPontos>().AdicionarPontos(5);
             
-            // Destrói o próprio tiro (o Anticorpo)
+            Destroy(outro.gameObject);
             Destroy(gameObject);
         }
     }
