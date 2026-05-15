@@ -3,8 +3,6 @@ using UnityEngine;
 public class ItemColetavel : MonoBehaviour
 {
     public float velocidade = 2f;
-    public int pontosGanhos = 10;
-    public int curaQuantidade = 5;
 
     void Update()
     {
@@ -20,11 +18,11 @@ public class ItemColetavel : MonoBehaviour
     {
         if (outro.CompareTag("Player"))
         {
-            Object.FindFirstObjectByType<GerenciadorPontos>().AdicionarPontos(pontosGanhos);
-            Object.FindFirstObjectByType<SaudeOrganismo>().TomarDano(-curaQuantidade);
-
-            Debug.Log("Antígeno coletado!");
-            Destroy(gameObject);
+            InventarioJogador inventario = outro.GetComponent<InventarioJogador>();
+            if (inventario != null && inventario.AdicionarAntigeno())
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

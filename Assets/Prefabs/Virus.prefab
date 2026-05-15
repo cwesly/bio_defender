@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0.6528301, g: 0.12687072, b: 0.12687072, a: 1}
+  m_Color: {r: 0.95686275, g: 0.2627451, b: 0.21176471, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -188,3 +188,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovimentoInimigo
   velocidade: 3
   limiteTelaY: -6
+  danoAoOrganismo: 10

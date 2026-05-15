@@ -19,7 +19,7 @@ public class MovimentoAnticorpo : MonoBehaviour
     {
         if (outro.CompareTag("Inimigo"))
         {
-            Object.FindFirstObjectByType<GerenciadorPontos>().AdicionarPontos(5);
+            Object.FindAnyObjectByType<GerenciadorPontos>().AdicionarPontos(5);
             
             Destroy(outro.gameObject);
             Destroy(gameObject);
