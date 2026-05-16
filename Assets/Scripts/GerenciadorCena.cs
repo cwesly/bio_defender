@@ -10,12 +10,6 @@ public class GerenciadorCena : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void IrParaMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MenuPrincipal");
-    }
-
     public void SairDoJogo()
     {
         Application.Quit();
