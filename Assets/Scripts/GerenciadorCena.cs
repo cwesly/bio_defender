@@ -1,26 +1,23 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Essencial para trocar de cenas
+using UnityEngine.SceneManagement;
 
 public class GerenciadorCena : MonoBehaviour
 {
     public void ReiniciarPartida()
     {
-        // Reseta o tempo do jogo (caso tenha sido pausado)
+        // Restaura o tempo antes de recarregar; sem isso a cena recarrega pausada
         Time.timeScale = 1f;
-        
-        // Recarrega a cena que está aberta no momento
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void IrParaMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MenuPrincipal"); // Nome da sua futura cena de menu
+        SceneManager.LoadScene("MenuPrincipal");
     }
 
     public void SairDoJogo()
     {
-        Debug.Log("O jogador saiu do jogo.");
         Application.Quit();
     }
 }
