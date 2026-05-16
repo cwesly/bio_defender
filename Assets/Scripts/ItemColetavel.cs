@@ -19,6 +19,9 @@ public class ItemColetavel : MonoBehaviour
         if (outro.CompareTag("Player"))
         {
             InventarioJogador inventario = outro.GetComponent<InventarioJogador>();
+
+            // AdicionarAntigeno retorna false se o inventário estiver cheio (limite 3);
+            // nesse caso o item NÃO é destruído e continua na tela
             if (inventario != null && inventario.AdicionarAntigeno())
             {
                 Destroy(gameObject);

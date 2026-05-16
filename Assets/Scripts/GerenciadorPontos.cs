@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro; // Biblioteca necessária para o TextMeshPro
+using TMPro;
 
 public class GerenciadorPontos : MonoBehaviour
 {

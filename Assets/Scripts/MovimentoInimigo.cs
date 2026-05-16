@@ -4,13 +4,14 @@ public class MovimentoInimigo : MonoBehaviour
 {
     public float velocidade = 3f;
     public float limiteTelaY = -6f;
+
+    // Dano ao deixar o vírus passar pela tela inteira (penalidade maior por descuido)
     public int danoAoOrganismo = 10;
 
     private SaudeOrganismo scriptSaude;
 
     void Start()
     {
-        // Encontra o script de saúde que está no objeto SistemaDeJogo
         scriptSaude = GameObject.Find("SistemaDeJogo").GetComponent<SaudeOrganismo>();
     }
 
@@ -20,18 +21,17 @@ public class MovimentoInimigo : MonoBehaviour
 
         if (transform.position.y < limiteTelaY)
         {
-            // Se o vírus passar, o organismo toma dano
             scriptSaude.TomarDano(danoAoOrganismo);
             Destroy(gameObject);
         }
     }
 
-    // Se o vírus tocar no Macrófago (Player)
     void OnTriggerEnter2D(Collider2D outro)
     {
-        if (outro.CompareTag("Player")) 
+        // Encostar no Macrófago causa dano menor (6) do que deixar passar (10)
+        if (outro.CompareTag("Player"))
         {
-            scriptSaude.TomarDano(5); // Tocar no player tira menos vida ou causa efeito Sticky
+            scriptSaude.TomarDano(6);
             Destroy(gameObject);
         }
     }

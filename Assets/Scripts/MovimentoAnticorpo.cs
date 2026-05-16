@@ -9,6 +9,7 @@ public class MovimentoAnticorpo : MonoBehaviour
     {
         transform.position += Vector3.up * velocidade * Time.deltaTime;
 
+        // Destrói o projétil ao sair da tela para não acumular objetos inativos
         if (transform.position.y > limiteTelaY)
         {
             Destroy(gameObject);
@@ -19,8 +20,9 @@ public class MovimentoAnticorpo : MonoBehaviour
     {
         if (outro.CompareTag("Inimigo"))
         {
-            Object.FindAnyObjectByType<GerenciadorPontos>().AdicionarPontos(5);
-            
+            // +10 pontos por derrotar um vírus com anticorpo
+            Object.FindAnyObjectByType<GerenciadorPontos>().AdicionarPontos(10);
+
             Destroy(outro.gameObject);
             Destroy(gameObject);
         }
