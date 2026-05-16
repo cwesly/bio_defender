@@ -12,7 +12,7 @@ public class MovimentoInimigo : MonoBehaviour
 
     void Start()
     {
-        scriptSaude = GameObject.Find("SistemaDeJogo").GetComponent<SaudeOrganismo>();
+        scriptSaude = FindFirstObjectByType<SaudeOrganismo>();
     }
 
     void Update()
@@ -21,7 +21,8 @@ public class MovimentoInimigo : MonoBehaviour
 
         if (transform.position.y < limiteTelaY)
         {
-            scriptSaude.TomarDano(danoAoOrganismo);
+            if (scriptSaude != null)
+                scriptSaude.TomarDano(danoAoOrganismo);
             Destroy(gameObject);
         }
     }
@@ -31,7 +32,8 @@ public class MovimentoInimigo : MonoBehaviour
         // Encostar no Macrófago causa dano menor (6) do que deixar passar (10)
         if (outro.CompareTag("Player"))
         {
-            scriptSaude.TomarDano(6);
+            if (scriptSaude != null)
+                scriptSaude.TomarDano(6);
             Destroy(gameObject);
         }
     }
