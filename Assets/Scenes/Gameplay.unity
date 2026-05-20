@@ -1295,7 +1295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7f1c828fb3f77449cc23295b02f7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HUDAntigenos
-  inventario: {fileID: 0}
+  inventario: {fileID: 1148913223}
   slots:
   - {fileID: 918155571}
   - {fileID: 1519466416}
@@ -1420,9 +1420,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GeradorInimigos
   prefabVirus: {fileID: 5204855727670266403, guid: 6af8b8892c17c51469409afd0e3993a4, type: 3}
   prefabAntigeno: {fileID: 4783576497275550187, guid: d490c50ce9966cb46bc43ff7fca3b83b, type: 3}
+  prefabBacteria: {fileID: 3229771855786393568, guid: 62ab297ab6d012d479080d3879e1e2de, type: 3}
   tempoDeEspera: 1.5
   limiteX: 7.5
   chanceDeAntigeno: 0.2
+  chanceDeBacteria: 0.3
 --- !u!4 &1988379745
 Transform:
   m_ObjectHideFlags: 0
