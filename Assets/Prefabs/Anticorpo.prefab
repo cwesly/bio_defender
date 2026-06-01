@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovimentoAnticorpo
   velocidade: 10
   limiteTelaY: 6
+  prefabExplosao: {fileID: 1440570595663055457, guid: 4c336bdf6e57640418e1aecc07d1ded2, type: 3}
 --- !u!58 &-4947672367177681476
 CircleCollider2D:
   m_ObjectHideFlags: 0
