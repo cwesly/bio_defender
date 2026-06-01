@@ -3,9 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class GerenciadorCena : MonoBehaviour
 {
+    public void IniciarJogo()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Gameplay");
+    }
+
     public void ReiniciarPartida()
     {
-        // Restaura o tempo antes de recarregar; sem isso a cena recarrega pausada
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
